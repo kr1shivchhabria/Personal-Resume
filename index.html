@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
-/* ============ TOKENS ============ */
 
 :root{
   --bg:#070a08;
@@ -61,7 +60,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-o
 #ember-canvas{position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.5;}
 #fx-canvas{position:fixed; inset:0; z-index:1550; pointer-events:none;}
 
-/* ============ CURSOR SPOTLIGHT (desktop only) ============ */
+/* ============ CURSOR SPOTLIGHT - desktop only ============ */
 
 .cursor-glow{
   position:fixed; width:460px; height:460px; border-radius:50%;
@@ -266,7 +265,7 @@ nav{
 .stat .num{font-family:var(--font-display); font-size:32px; color:var(--accent); font-weight:700;}
 .stat .label{font-size:13px; color:var(--text-dim); margin-top:4px;}
 
-/* ---- 3D terminal card ---- */
+/* ---- TERMINAL CARD ---- */
 
 .term-card{
   margin-top:22px; border-radius:14px; overflow:hidden;
@@ -282,7 +281,7 @@ nav{
 .term-body .muted{color:var(--text-dim);}
 .term-body .cursor{display:inline-block; width:7px; height:13px; background:var(--accent); vertical-align:-2px; animation:blink 1s step-end infinite;}
 
-/* ============ TIMELINE (Experience) ============ */
+/* ============ EXPERIENCE ============ */
 
 .timeline{position:relative; margin-top:8px;}
 .timeline::before{
@@ -341,7 +340,7 @@ nav{
 }
 .tag:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-2px) scale(1.04);}
 
-/* ---- 3D skill cube ---- */
+/* ---- 3D cube ---- */
 
 .cube-row{margin-top:64px; display:flex; align-items:center; gap:48px; flex-wrap:wrap; justify-content:center;}
 .cube-stage{perspective:900px; width:130px; height:130px; flex-shrink:0;}
@@ -678,7 +677,7 @@ footer{padding:32px 24px; text-align:center; color:var(--text-dim); font-family:
           <span class="tag">Github</span>
           <span class="tag">CSS</span>
           <span class="tag">Xcode</span>
-          <span class="tag">Git</span>
+          <span class="tag">Java</span>
         </div>
       </div>
       <div class="skill-cat reveal fly-right" style="transition-delay:.1s;">
@@ -705,11 +704,11 @@ footer{padding:32px 24px; text-align:center; color:var(--text-dim); font-family:
           <div class="cube-face cf-back">CSS</div>
           <div class="cube-face cf-right">PYTHON</div>
           <div class="cube-face cf-left">XCODE</div>
-          <div class="cube-face cf-top">GIT + GITHUB</div>
-          <div class="cube-face cf-bottom">AI</div>
+          <div class="cube-face cf-top">GITHUB</div>
+          <div class="cube-face cf-bottom">JAVA</div>
         </div>
       </div>
-      <p class="cube-caption"><strong>Still coding.</strong>Six sides, six tools, one irritatingly persistent freshman. Hover to pause it, just like how I'll pause whatever I'm doing to get your work done first.</p>
+      <p class="cube-caption"><strong>Still compiling.</strong>Six sides, six tools, and one irritatingly persistent freshman. Hover over it pause the cube, the way I'll pause any other work for what you need.</p>
     </div>
   </div>
 </section>
@@ -840,7 +839,7 @@ footer{padding:32px 24px; text-align:center; color:var(--text-dim); font-family:
   document.addEventListener('scroll', updateProgress, {passive:true});
   updateProgress();
 
-  /* ---------- cursor spotlight (desktop, non-touch) ---------- */
+  /* ---------- cursor spotlight  ---------- */
 
   var glow = document.getElementById('cursorGlow');
   if (isTouch || reduceMotion) {
@@ -956,7 +955,7 @@ footer{padding:32px 24px; text-align:center; color:var(--text-dim); font-family:
   modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
 
-  /* ---------- ambient embers: sparse drifting dots, no connecting lines ---------- */
+  /* ---------- ambience ---------- */
   var canvas = document.getElementById('ember-canvas');
   var ctx = canvas.getContext('2d');
   var W, H, embers;
@@ -1003,7 +1002,7 @@ footer{padding:32px 24px; text-align:center; color:var(--text-dim); font-family:
   window.addEventListener('resize', function(){ resize(); initEmbers(); });
   if (!reduceMotion) requestAnimationFrame(step);
 
-  /* ---------- click fireworks: plain clicks vs button clicks ---------- */
+  /* ---------- fireworks ---------- */
   var fxCanvas = document.getElementById('fx-canvas');
   var fxCtx = fxCanvas.getContext('2d');
   var fxParticles = [];
